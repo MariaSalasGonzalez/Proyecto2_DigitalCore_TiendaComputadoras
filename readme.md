@@ -54,4 +54,4 @@ Proyecto 2 - Universidad Nacional de Costa Rica / Curso de Desarrollo Web
 
 ---
 
-🔗 [Ver el sitio en vivo]()
+🔗 [Ver el sitio en vivo](https://mariasalasgonzalez.github.io/Proyecto2_DigitalCore_TiendaComputadoras/)
