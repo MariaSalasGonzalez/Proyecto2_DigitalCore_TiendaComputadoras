@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<!-- Idioma –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<html lang="es">
+
+<!-- Cabecera –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<head>
+  <meta charset="UTF-8">
+  <title>DigitalCore | Términos & Condiciones </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="images_inicio/logo.png" type="image/png">
+  <link rel="stylesheet" href="styles/inicio.css">
+  <link rel="stylesheet" href="styles/terminoCondicion.css">
+</head>
+
+<!-- Barra Superior –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="top-bar">
+  <a href="index.html"><img src="images_inicio/logo.png" alt="Logo" class="logo"></a>
+  <div class="search-bar">
+    <form action="busqueda.html" method="get">
+      <button type="submit"><i class="bi bi-search"></i></button>
+      <input type="text" name="q" placeholder=" Buscar productos...">
+    </form>
+  </div>
+  <div>
+    <a href="CategoriaOfertas.html"><img src="images_busqueda/ofertas.png" alt="Ofertas" height="50"></a>
+  </div>
+</div>
+
+<!-- Barra Inferior –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="bottom-bar">
+  <div class="menu-icon" onclick="toggleSidebar()">☰</div>
+  <div><strong>Todas las Categorías</strong></div>
+  <a href="index.html">Inicio</a>
+  <a href="SobreNosotros.html">Sobre Nosotros</a>
+  <a href="CategoriaLaptop.html">Laptop</a>
+  <a href="CategoriaGaming.html">Gaming</a>
+  <a href="CategoriaOfertas.html">Ofertas</a>
+  <a href="TerminosCondiciones.html">Términos y Condiciones</a>
+  <a>❤️</a>
+  <a href="Carrito.html">🛒</a>
+</div>
+
+<!-- Barra Lateral –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="sidebar bg-white" id="sidebar">
+  <ul>
+    <li onclick="toggleSubmenu(event, this)"><i class="bi bi-phone"></i> Celulares<span>+</span>
+      <ul>
+        <li onclick="toggleSubmenu(event, this)">Smartphones<span>+</span>
+          <ul>
+            <li>Android</li>
+            <li>iPhone</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li onclick="toggleSubmenu(event, this)"><i class="bi bi-smartwatch bg-white"></i> Wearables<span>+</span>
+      <ul>
+        <li>Smartwatches</li>
+        <li>Brazaletes</li>
+      </ul>
+    </li>
+    <li><a href="CategoriaLaptop.html"><i class="bi bi-tv"></i> Laptop</a></li>
+    <li><a href="CategoriaGaming.html"><i class="bi bi-controller"></i> Video Juegos</a></li>
+    <li><a href="CategoriaOfertas.html"><i class="bi bi-lightning-charge"></i> Ofertas</a></li>
+  </ul>
+</div>
+
+<!-- Funcionamiento Barra Lateral –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+    sidebar.classList.toggle('active');
+    mainContent.classList.toggle('shifted');
+  }
+
+  function toggleSubmenu(event, item) {
+    event.stopPropagation();
+    item.classList.toggle('active');
+    const span = item.querySelector(':scope > span');
+    if (span) {
+      span.textContent = item.classList.contains('active') ? '-' : '+';
+    }
+  }
+
+  document.addEventListener('click', function(event) {
+    const sidebar = document.getElementById('sidebar');
+    const menuIcon = document.querySelector('.menu-icon');
+    if (!sidebar.contains(event.target) && !menuIcon.contains(event.target)) {
+      sidebar.classList.remove('active');
+      document.getElementById('mainContent').classList.remove('shifted');
+    }
+  });
+</script>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+    sidebar.classList.toggle('active');
+    mainContent.classList.toggle('shifted');
+  }
+</script><br>
+
+<!-- Contenido –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<body>
+<div class="terminos">
+  <h2>Términos & Condiciones</h2>
+  <img src="images_inicio/logo.png" alt="Logo DigitalCore">
+
+  <h6>Reglas Generales</h6>
+  <p>Este contrato de CONTRATO DE TÉRMINOS DE USO regula las siguientes cláusulas, declaraciones y conceptos de desarrollo y afines a contratación, sin importar la utilización en forma digital o presencial.</p>
+  <p>La interacción con este sitio web implica el uso obligatorio del contrato, por lo tanto debe ser leído completamente antes de aceptar condiciones.</p>
+
+  <h6>Productos</h6>
+  <p>Todo aquel bien tecnológico en sus características claramente descritas y comercializado directamente o indirectamente por DigitalCore.</p>
+
+  <h6>Contenido del Sitio</h6>
+  <p>El lenguaje en DigitalCore se presenta al USUARIO discreto como medios educativos, útiles y afines para apoyar y establecer los CONTRATOS DE TÉRMINOS DE USO vinculados a su nombre o razón, lo cual implica crear una cuenta de registro donde ingresará datos personales para poder realizar una transacción.</p>
+
+  <h6>Precios</h6>
+  <p>Los precios en PRODUCTOS vendidos por DigitalCore no podrán ser confirmados al pedido sino una vez hecha la transacción. El USUARIO acepta que los precios mostrados pueden variar por promociones o cambios de moneda.</p>
+
+  <h6>Pedidos</h6>
+  <p>Al finalizar el pago de un PRODUCTO, el USUARIO recibe en su dirección de correo electrónico el NÚMERO DE ORDEN detallando el nuevo PRODUCTO adquirido a través del sitio www.digitalcore.com.</p>
+
+  <h6>Privacidad de Datos</h6>
+  <p>Los datos brindados por el USUARIO a DigitalCore serán manejados con confidencialidad según la legislación vigente. Para más información, se puede consultar la Política de Privacidad disponible en el sitio web.</p>
+
+  <h6>Modificación de Términos</h6>
+  <p>DigitalCore podrá en cualquier momento realizar correcciones, ediciones y/o modificaciones en los CONTRATOS DE TÉRMINOS DE USO sin necesidad de autorización directa del USUARIO.</p>
+</div>
+
+<!-- Pie de Pagina Profesional –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="bg-white border-top pt-4">
+  <div class="container text-center">
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-3">
+        <img src="images_inicio/logo.png" alt="Logo DigitalCore" style="max-height: 70px;">
+        <p class="small mt-2">
+          ¡Somos tu tienda de confianza! Calidad, respaldo y atención personalizada desde el primer clic.
+        </p>
+      </div>
+      <div class="col-md-3 d-flex align-items-center justify-content-center">
+        <img src="images_inicio/mac.png" alt="Apple Reseller" style="max-height: 50px;">
+      </div>
+      <div class="col-md-3 d-flex align-items-center justify-content-center">
+        <img src="images_inicio/dji.png" alt="DJI" style="max-height: 40px;">
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <a href="#" class="me-3"><img src="images_inicio/face.png" alt="Facebook" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/twiter.png" alt="X" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/insta.png" alt="Instagram" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/youtube.png" alt="YouTube" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/linkedin.png" alt="LinkedIn" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/wa.png" alt="WhatsApp" width="32"></a>
+      <a href="#"><img src="images_inicio/tiktok.png" alt="TikTok" width="32"></a>
+    </div>
+  </div>
+</div>
+
+<!-- Boton WhatsApp Flotante –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<a href="https://wa.me/50660000000" class="whatsapp-float" target="_blank">
+  <img src="images_inicio/nume.png" style="width: 60px;">
+</a>
+
+<!-- Derechos & Pagos –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="mt-4 border-top pt-3">
+      <p class="small mb-3 text-center">© DigitalCore - 2025. Todos los Derechos Reservados.</p>
+      <div class="d-flex justify-content-center align-items-center gap-3">
+        <img src="images_inicio/visa.png" alt="Visa" width="60">
+        <img src="images_inicio/mastercard.png" alt="MasterCard" width="60">
+        <img src="images_inicio/pay.png" alt="PlacetoPay" width="120">
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

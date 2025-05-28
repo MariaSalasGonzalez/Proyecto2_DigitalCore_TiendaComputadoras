@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<!-- Idioma –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<html lang="es">
+
+<!-- Cabecera –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<head>
+  <meta charset="UTF-8">
+  <title>Sobre Nosotros</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="images_inicio/logo.png" type="image/png">
+  <link rel="stylesheet" href="styles/inicio.css">
+  <link rel="stylesheet" href="styles/nosotros.css">
+</head>
+
+<!-- Barra Superior –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="top-bar">
+  <a href="index.html"><img src="images_inicio/logo.png" alt="Logo" class="logo"></a>
+  <div class="search-bar">
+    <form action="busqueda.html" method="get">
+      <button type="submit"><i class="bi bi-search"></i></button>
+      <input type="text" name="q" placeholder=" Buscar productos...">
+    </form>
+  </div>
+  <div>
+    <a href="CategoriaOfertas.html"><img src="images_busqueda/ofertas.png" alt="Ofertas" height="50"></a>
+  </div>
+</div>
+
+<!-- Barra Inferior –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="bottom-bar">
+  <div class="menu-icon" onclick="toggleSidebar()">☰</div>
+  <div><strong>Todas las Categorías</strong></div>
+  <a href="index.html">Inicio</a>
+  <a href="SobreNosotros.html">Sobre Nosotros</a>
+  <a href="CategoriaLaptop.html">Laptop</a>
+  <a href="CategoriaGaming.html">Gaming</a>
+  <a href="CategoriaOfertas.html">Ofertas</a>
+  <a href="TerminosCondiciones.html">Términos y Condiciones</a>
+  <a>❤️</a>
+  <a href="Carrito.html">🛒</a>
+</div>
+
+<!-- Barra Lateral –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="sidebar bg-white" id="sidebar">
+  <ul>
+    <li onclick="toggleSubmenu(event, this)"><i class="bi bi-phone"></i> Celulares<span>+</span>
+      <ul>
+        <li onclick="toggleSubmenu(event, this)">Smartphones<span>+</span>
+          <ul>
+            <li>Android</li>
+            <li>iPhone</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li onclick="toggleSubmenu(event, this)"><i class="bi bi-smartwatch bg-white"></i> Wearables<span>+</span>
+      <ul>
+        <li>Smartwatches</li>
+        <li>Brazaletes</li>
+      </ul>
+    </li>
+    <li><a href="CategoriaLaptop.html"><i class="bi bi-tv"></i> Laptop</a></li>
+    <li><a href="CategoriaGaming.html"><i class="bi bi-controller"></i> Video Juegos</a></li>
+    <li><a href="CategoriaOfertas.html"><i class="bi bi-lightning-charge"></i> Ofertas</a></li>
+  </ul>
+</div>
+
+<!-- Funcionamiento Barra Lateral –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+    sidebar.classList.toggle('active');
+    mainContent.classList.toggle('shifted');
+  }
+
+  function toggleSubmenu(event, item) {
+    event.stopPropagation();
+    item.classList.toggle('active');
+    const span = item.querySelector(':scope > span');
+    if (span) {
+      span.textContent = item.classList.contains('active') ? '-' : '+';
+    }
+  }
+
+  document.addEventListener('click', function(event) {
+    const sidebar = document.getElementById('sidebar');
+    const menuIcon = document.querySelector('.menu-icon');
+    if (!sidebar.contains(event.target) && !menuIcon.contains(event.target)) {
+      sidebar.classList.remove('active');
+      document.getElementById('mainContent').classList.remove('shifted');
+    }
+  });
+</script>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+    sidebar.classList.toggle('active');
+    mainContent.classList.toggle('shifted');
+  }
+</script><br>
+
+<!-- Contenido –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<body>
+<div class="section-proposito">
+  <h2>Sobre Nosotros</h2>
+  <img src="images_inicio/logo.png" > 
+
+  <h5>¿Qué hacemos?</h5>
+  <p>
+    Proporcionamos soluciones tecnológicas de vanguardia para cada aspecto de tu vida, adaptándonos a tus necesidades
+    y facilitando tus actividades diarias.
+  </p>
+
+  <h5>¿Por qué estamos aquí?</h5>
+  <p>
+    En DigitalCore, creemos en el potencial ilimitado de cada individuo. Estamos convencidos de que, al maximizar ese potencial,
+    podemos alcanzar logros extraordinarios juntos.
+  </p>
+
+  <h5>¿Cómo lo hacemos?</h5>
+  <p>
+    Lo logramos ofreciendo un servicio que asegura una experiencia de compra excepcional, combinando innovación con un enfoque centrado en el cliente.
+  </p>
+
+  <h5>Principios</h5>
+  <ul>
+    <li>Valorar el tiempo de nuestros clientes.</li>
+    <li>Superar las expectativas.</li>
+    <li>Ofrecer siempre las últimas innovaciones.</li>
+  </ul>
+
+    <h5>Valores</h5>
+  <ul>
+    <li>Transparencia</li>
+    <li>Excelencia</li>
+    <li>Inclusión</li>
+    <li>Innovación</li>
+    <li>Trabajo en equipo</li>
+  </ul>
+</div>
+
+<!-- Pie de Pagina Profesional –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="bg-white border-top pt-4">
+  <div class="container text-center">
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-3">
+        <img src="images_inicio/logo.png" alt="Logo DigitalCore" style="max-height: 70px;">
+        <p class="small mt-2">
+          ¡Somos tu tienda de confianza! Calidad, respaldo y atención personalizada desde el primer clic.
+        </p>
+      </div>
+      <div class="col-md-3 d-flex align-items-center justify-content-center">
+        <img src="images_inicio/mac.png" alt="Apple Reseller" style="max-height: 50px;">
+      </div>
+      <div class="col-md-3 d-flex align-items-center justify-content-center">
+        <img src="images_inicio/dji.png" alt="DJI" style="max-height: 40px;">
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <a href="#" class="me-3"><img src="images_inicio/face.png" alt="Facebook" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/twiter.png" alt="X" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/insta.png" alt="Instagram" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/youtube.png" alt="YouTube" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/linkedin.png" alt="LinkedIn" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/wa.png" alt="WhatsApp" width="32"></a>
+      <a href="#"><img src="images_inicio/tiktok.png" alt="TikTok" width="32"></a>
+    </div>
+  </div>
+</div>
+
+<!-- Boton WhatsApp Flotante –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<a href="https://wa.me/50660000000" class="whatsapp-float" target="_blank">
+  <img src="images_inicio/nume.png" style="width: 60px;">
+</a>
+
+<!-- Derechos & Pagos –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="mt-4 border-top pt-3">
+      <p class="small mb-3 text-center">© DigitalCore - 2025. Todos los Derechos Reservados.</p>
+      <div class="d-flex justify-content-center align-items-center gap-3">
+        <img src="images_inicio/visa.png" alt="Visa" width="60">
+        <img src="images_inicio/mastercard.png" alt="MasterCard" width="60">
+        <img src="images_inicio/pay.png" alt="PlacetoPay" width="120">
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

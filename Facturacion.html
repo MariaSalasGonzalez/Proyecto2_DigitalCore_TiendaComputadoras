@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!-- Idioma –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<html lang="es">
+
+<!-- Cabecera –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DigitalCore | Finalizar Compra</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="images_inicio/logo.png" type="image/png">
+  <link rel="stylesheet" href="styles/carrito.css">
+  <link rel="stylesheet" href="styles/inicio.css">
+  <link rel="stylesheet" href="styles/facturacion.css">
+</head>
+<body class="bg-light">
+
+<!-- Barra Superior –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="top-bar">
+  <a href="index.html"><img src="images_inicio/logo.png" alt="Logo" class="logo"></a>
+  <div class="search-bar">
+    <form action="busqueda.html" method="get">
+      <button type="submit"><i class="bi bi-search"></i></button>
+      <input type="text" name="q" placeholder=" Buscar productos...">
+    </form>
+  </div>
+  <div>
+    <a href="CategoriaOfertas.html"><img src="images_busqueda/ofertas.png" alt="Ofertas" height="50"></a>
+  </div>
+</div>
+
+<!-- Barra Inferior –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="bottom-bar">
+  <div class="menu-icon" onclick="toggleSidebar()">☰</div>
+  <div><strong>Todas las Categorías</strong></div>
+  <a href="index.html">Inicio</a>
+  <a href="SobreNosotros.html">Sobre Nosotros</a>
+  <a href="CategoriaLaptop.html">Laptop</a>
+  <a href="CategoriaGaming.html">Gaming</a>
+  <a href="CategoriaOfertas.html">Ofertas</a>
+  <a href="TerminosCondiciones.html">Términos y Condiciones</a>
+  <a>❤️</a>
+  <a href="Carrito.html">🛒</a>
+</div>
+
+<!-- Barra Lateral –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="sidebar bg-white" id="sidebar">
+  <ul>
+    <li onclick="toggleSubmenu(event, this)"><i class="bi bi-phone"></i> Celulares<span>+</span>
+      <ul>
+        <li onclick="toggleSubmenu(event, this)">Smartphones<span>+</span>
+          <ul>
+            <li>Android</li>
+            <li>iPhone</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li onclick="toggleSubmenu(event, this)"><i class="bi bi-smartwatch bg-white"></i> Wearables<span>+</span>
+      <ul>
+        <li>Smartwatches</li>
+        <li>Brazaletes</li>
+      </ul>
+    </li>
+    <li><a href="CategoriaLaptop.html"><i class="bi bi-tv"></i> Laptop</a></li>
+    <li><a href="CategoriaGaming.html"><i class="bi bi-controller"></i> Video Juegos</a></li>
+    <li><a href="CategoriaOfertas.html"><i class="bi bi-lightning-charge"></i> Ofertas</a></li>
+  </ul>
+</div>
+
+<!-- Funcionamiento Barra Lateral –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+    sidebar.classList.toggle('active');
+    mainContent.classList.toggle('shifted');
+  }
+
+  function toggleSubmenu(event, item) {
+    event.stopPropagation();
+    item.classList.toggle('active');
+    const span = item.querySelector(':scope > span');
+    if (span) {
+      span.textContent = item.classList.contains('active') ? '-' : '+';
+    }
+  }
+
+  document.addEventListener('click', function(event) {
+    const sidebar = document.getElementById('sidebar');
+    const menuIcon = document.querySelector('.menu-icon');
+    if (!sidebar.contains(event.target) && !menuIcon.contains(event.target)) {
+      sidebar.classList.remove('active');
+      document.getElementById('mainContent').classList.remove('shifted');
+    }
+  });
+</script>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+    sidebar.classList.toggle('active');
+    mainContent.classList.toggle('shifted');
+  }
+</script>
+
+<!-- Contenido –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<body>
+  <div class="checkout-steps-bar">
+    CARRITO → <span style="color: white"><strong>FINALIZAR COMPRA</strong></span> → PEDIDO COMPLETADO
+  </div>
+  <div class="coupon-link">
+    ¿Tienes un cupón? <a>Haz clic aquí para introducir tu código</a>
+  </div>
+
+  <div class="container bg-white p-4 my-3 rounded shadow-sm">
+    <div class="row">
+      <div class="col-lg-8">
+        <h5 class="fw-bold mb-3">Información de Contacto</h5>
+        <form>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Nombre</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Apellidos</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Cédula de Identidad</label>
+              <input type="text" class="form-control" placeholder="Cédula de Identidad">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Teléfono</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">País / Región</label>
+              <input type="text" class="form-control" value="Costa Rica">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Provincia</label>
+              <input type="text" class="form-control" value="San José">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Cantón / Distrito</label>
+              <select class="form-select">
+                <option>Seleccione una opción</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Dirección</label>
+              <input type="text" class="form-control" placeholder="Nombre de la calle y número">
+            </div>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Apartamento, habitación, escalera, etc. (opcional)">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Notas del pedido (opcional)</label>
+              <textarea class="form-control"></textarea>
+            </div>
+          </div>
+        </form>
+
+        <div class="mt-4">
+          <h5 class="fw-bold">Método de Pago</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="pago" id="pago1">
+            <label class="form-check-label" for="pago1">Transferencia bancaria</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="pago" id="pago2">
+            <label class="form-check-label" for="pago2">Tarjeta Davivienda
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="pago" id="pago3">
+            <label class="form-check-label" for="pago3">Tarjeta Banco Nacional</label>
+          </div>
+          <div class="form-check mt-3">
+            <input class="form-check-input" type="checkbox" id="terminos">
+            <label class="form-check-label" for="terminos">
+              He leído y acepto los términos y condiciones *
+            </label>
+          </div>
+          <button class="btn btn-danger w-100 mt-3">Realizar el Pedido</button>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="border p-3 mb-3">
+      <div class="border p-3 rounded shadow-sm bg-white">
+        <h4 class="fw-bold mb-3">Su Orden</h4>
+
+        <div class="d-flex justify-content-between small text-muted border-bottom pb-1">
+          <strong>PRODUCTO</strong>
+          <strong>SUBTOTAL</strong>
+        </div>
+
+        <div class="d-flex justify-content-between py-2">
+          <div>
+            <span class="fw-semibold">Tablet Samsung Galaxy Tab A9 4GB – 64GB – WIFI – 8.7″</span><br>
+            <small class="text-muted">SKU: LOC-TAG</small>
+          </div>
+          <div class="text-end fw-semibold">₡85,000</div>
+        </div>
+        <div>
+            <span class="fw-semibold">Laptop Asus<br> VivoBook – 16GB<br> – 1TB SSD – W11</span><br>
+            <small class="text-muted">SKU: SSS-TAG</small>
+          </div>
+          <div class="text-end fw-semibold">₡685,000</div>
+        </div>
+
+        <div class="d-flex justify-content-between border-top pt-2 fw-bold">
+          <span>Subtotal</span>
+          <span class="text-danger">₡77</span>
+        </div>
+
+        <hr>
+
+        <div class="mb-2 small fw-semibold text-muted">Envío</div>
+        <div class="form-check mb-1">
+          <input class="form-check-input" type="radio" name="envio" id="envio2">
+          <label class="form-check-label" for="envio2">
+            Entrega GAM (3 a 5 Días) (Laptops, Tablets, Celulares): <span class="text-danger">₡2,900</span>
+          </label>
+        </div>
+        <div class="form-check mb-1">
+          <input class="form-check-input" type="radio" name="envio" id="envio3">
+          <label class="form-check-label" for="envio3">
+            Entrega Rural - (3 a 5 Días): <span class="text-danger">₡7,900</span>
+          </label>
+        </div>
+        <div class="form-check mb-1">
+          <input class="form-check-input" type="radio" name="envio" id="envio4">
+          <label class="form-check-label" for="envio4">
+            Envío encomienda fuera GAM (Laptops, Tablets, Celulares etc): <span class="text-danger">₡2,900</span>
+          </label>
+        </div>
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="radio" name="envio" id="envio5">
+          <label class="form-check-label" for="envio5">
+            Envío encomienda fuera GAM (Sillas, Monitores, Pantallas, etc): <span class="text-danger">₡4,900</span>
+          </label>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between fw-bold">
+          <span>Total</span>
+          <span class="text-danger">₡320</span>
+        </div>
+        <p class="text-end text-muted small m-0">(Incluye ₡3,700 Impuesto IVA)</p>
+      </div>
+      </div>
+
+        <div class="mt-4">
+          <h6 class="fw-bold">Productos que te interesan</h6>
+          <div class="row g-2">
+            <div class="col-4">
+              <div class="product-card">
+                <img src="images_contenido/c3.webp" class="img-fluid">
+                <p class="m-0">HP Elitebook G4</p>
+                <small class="text-muted">₡195,000</small>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="product-card">
+                <img src="images_contenido/c4.webp" class="img-fluid">
+                <p class="m-0">DELL Latitude</p>
+                <small class="text-muted">₡199,000</small>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="product-card">
+                <img src="images_contenido/c7.webp" class="img-fluid">
+                <p class="m-0">HP 14&quot; i5</p>
+                <small class="text-muted">₡255,000</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Pie de Pagina Profesional –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="bg-white border-top pt-4">
+  <div class="container text-center">
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-3">
+        <img src="images_inicio/logo.png" alt="Logo DigitalCore" style="max-height: 70px;">
+        <p class="small mt-2">
+          ¡Somos tu tienda de confianza! Calidad, respaldo y atención personalizada desde el primer clic.
+        </p>
+      </div>
+      <div class="col-md-3 d-flex align-items-center justify-content-center">
+        <img src="images_inicio/mac.png" alt="Apple Reseller" style="max-height: 50px;">
+      </div>
+      <div class="col-md-3 d-flex align-items-center justify-content-center">
+        <img src="images_inicio/dji.png" alt="DJI" style="max-height: 40px;">
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <a href="#" class="me-3"><img src="images_inicio/face.png" alt="Facebook" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/twiter.png" alt="X" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/insta.png" alt="Instagram" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/youtube.png" alt="YouTube" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/linkedin.png" alt="LinkedIn" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/wa.png" alt="WhatsApp" width="32"></a>
+      <a href="#"><img src="images_inicio/tiktok.png" alt="TikTok" width="32"></a>
+    </div>
+  </div>
+</div>
+
+<!-- Boton WhatsApp Flotante –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<a href="https://wa.me/50660000000" class="whatsapp-float" target="_blank">
+  <img src="images_inicio/nume.png" style="width: 60px;">
+</a>
+
+<!-- Derechos y Pagos –––––––––––––––––––––––––––––––––––––––––––––––-------––– -->
+    <div class="mt-4 border-top pt-3">
+      <p class="small mb-3 text-center">© DigitalCore Costa Rica - 2025. Todos los Derechos Reservados.</p>
+      <div class="d-flex justify-content-center align-items-center gap-3">
+        <img src="images_inicio/visa.png" alt="Visa" width="60">
+        <img src="images_inicio/mastercard.png" alt="MasterCard" width="60">
+        <img src="images_inicio/pay.png" alt="PlacetoPay" width="120">
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

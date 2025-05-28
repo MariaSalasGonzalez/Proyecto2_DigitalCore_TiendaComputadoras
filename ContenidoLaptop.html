@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<!-- Idioma –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<html lang="es">
+
+<!-- Cabecera –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Producto - Laptop ASUS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="images_inicio/logo.png" type="image/png">
+  <link rel="stylesheet" href="styles/contenido.css">
+  <link rel="stylesheet" href="styles/inicio.css">
+</head>
+
+<!-- Barra Superior –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="top-bar">
+  <a href="index.html"><img src="images_inicio/logo.png" alt="Logo" class="logo"></a>
+  <div class="search-bar">
+    <form action="busqueda.html" method="get">
+      <button type="submit"><i class="bi bi-search"></i></button>
+      <input type="text" name="q" placeholder=" Buscar productos...">
+    </form>
+  </div>
+  <div>
+    <a href="CategoriaOfertas.html"><img src="images_busqueda/ofertas.png" alt="Ofertas" height="50"></a>
+  </div>
+</div>
+
+<!-- Barra Inferior –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="bottom-bar">
+  <div class="menu-icon" onclick="toggleSidebar()">☰</div>
+  <div><strong>Todas las Categorías</strong></div>
+  <a href="index.html">Inicio</a>
+  <a href="SobreNosotros.html">Sobre Nosotros</a>
+  <a href="CategoriaLaptop.html">Laptop</a>
+  <a href="CategoriaGaming.html">Gaming</a>
+  <a href="CategoriaOfertas.html">Ofertas</a>
+  <a href="TerminosCondiciones.html">Términos y Condiciones</a>
+  <a>❤️</a>
+  <a href="Carrito.html">🛒</a>
+</div>
+
+<!-- Barra Lateral –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="sidebar bg-white" id="sidebar">
+  <ul>
+    <li onclick="toggleSubmenu(event, this)"><i class="bi bi-phone"></i> Celulares<span>+</span>
+      <ul>
+        <li onclick="toggleSubmenu(event, this)">Smartphones<span>+</span>
+          <ul>
+            <li>Android</li>
+            <li>iPhone</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li onclick="toggleSubmenu(event, this)"><i class="bi bi-smartwatch bg-white"></i> Wearables<span>+</span>
+      <ul>
+        <li>Smartwatches</li>
+        <li>Brazaletes</li>
+      </ul>
+    </li>
+    <li><a href="CategoriaLaptop.html"><i class="bi bi-tv"></i> Laptop</a></li>
+    <li><a href="CategoriaGaming.html"><i class="bi bi-controller"></i> Video Juegos</a></li>
+    <li><a href="CategoriaOfertas.html"><i class="bi bi-lightning-charge"></i> Ofertas</a></li>
+  </ul>
+</div>
+
+<!-- Funcionamiento Barra Lateral –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+    sidebar.classList.toggle('active');
+    mainContent.classList.toggle('shifted');
+  }
+
+  function toggleSubmenu(event, item) {
+    event.stopPropagation();
+    item.classList.toggle('active');
+    const span = item.querySelector(':scope > span');
+    if (span) {
+      span.textContent = item.classList.contains('active') ? '-' : '+';
+    }
+  }
+
+  document.addEventListener('click', function(event) {
+    const sidebar = document.getElementById('sidebar');
+    const menuIcon = document.querySelector('.menu-icon');
+    if (!sidebar.contains(event.target) && !menuIcon.contains(event.target)) {
+      sidebar.classList.remove('active');
+      document.getElementById('mainContent').classList.remove('shifted');
+    }
+  });
+</script>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+    sidebar.classList.toggle('active');
+    mainContent.classList.toggle('shifted');
+  }
+</script>
+
+<!-- Contenido –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container mt-4">
+    <div class="container my-5">
+  <!-- Sección de Producto -->
+  <div class="card-custom">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="images_contenido/c1.webp" alt="Laptop ASUS" class="img-fluid rounded">
+      </div>
+      <div class="col-md-6">
+        <h4>LAPTOP ASUS VIVOBOOK K3605VU CI9-13900H – 16GB – 1TB SSD – RTX-4050 – 16” – W11</h4>
+        <p class="text-muted">SKU: 90NB11Z2-M00BY0 | Marca: <strong>ASUS</strong></p>
+        <p class="precio-final">₡685,000 IVAI</p>
+        <div class="mb-3">
+          <a href="Carrito.html" class="btn btn-success">Añadir al Carrito</a>
+          <button class="btn btn-outline-dark">Más Información</button>
+          <button class="btn btn-outline-primary">Opciones de Financiamiento</button>
+        </div>
+        <p class="text-danger"><i class="bi bi-eye-fill"></i> 20 personas viendo este producto ahora</p>
+
+        <!-- Formas de pago -->
+        <div class="form-pago text-center border rounded py-3 mt-3">
+          <strong>FORMAS DE PAGO</strong><br>
+          <img src="images_inicio/visa.png" alt="Visa">
+          <img src="images_inicio/mastercard.png" alt="Mastercard">
+          <img src="images_inicio/paypal.png" alt="PayPal">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Descripción y Especificaciones -->
+  <div class="row">
+    <div class="col-md-7">
+      <div class="card-custom">
+        <h5>Descripción</h5>
+        <ul>
+          <li>Diagonal de pantalla: 16”</li>
+          <li>Procesador: Intel® Core™ i9-13900H / 5.4 GHz</li>
+          <li>Memoria RAM: 16 GB DDR4</li>
+          <li>Almacenamiento: 1TB SSD NVMe</li>
+          <li>Gráficos: NVIDIA RTX-4050 6GB</li>
+          <li>Sistema operativo: Windows 11 Home</li>
+          <li>Peso: 1.8 kg</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="card-custom">
+        <h5>Especificaciones</h5>
+        <ul class="list-unstyled">
+          <li><strong>Marca:</strong> Asus</li>
+          <li><strong>Procesador:</strong> Intel Core i9</li>
+          <li><strong>Memoria RAM:</strong> 16GB</li>
+          <li><strong>Almacenamiento:</strong> 1TB</li>
+          <li><strong>Gráficos:</strong> Nvidia RTX 4050</li>
+          <li><strong>Pantalla:</strong> 16”</li>
+          <li><strong>Sistema Operativo:</strong> Windows 11 Home</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Review de compradores -->
+  <div class="card-custom">
+    <h5>Review de Compradores</h5>
+    <div class="row">
+      <div class="col-md-6">
+        <p class="mb-2">0 reseñas</p>
+        <div class="mb-2 d-flex align-items-center">
+          <span class="me-2 text-warning">★★★★★</span>
+          <div class="progress flex-grow-1 me-2">
+            <div class="progress-bar bg-warning" style="width: 0%;"></div>
+          </div>
+          <span>0</span>
+        </div>
+        <div class="mb-2 d-flex align-items-center">
+          <span class="me-2 text-warning">★★★★☆</span>
+          <div class="progress flex-grow-1 me-2">
+            <div class="progress-bar bg-warning" style="width: 0%;"></div>
+          </div>
+          <span>0</span>
+        </div>
+        <div class="mb-2 d-flex align-items-center">
+          <span class="me-2 text-warning">★★★☆☆</span>
+          <div class="progress flex-grow-1 me-2">
+            <div class="progress-bar bg-warning" style="width: 0%;"></div>
+          </div>
+          <span>0</span>
+        </div>
+        <div class="mb-2 d-flex align-items-center">
+          <span class="me-2 text-warning">★★☆☆☆</span>
+          <div class="progress flex-grow-1 me-2">
+            <div class="progress-bar bg-warning" style="width: 0%;"></div>
+          </div>
+          <span>0</span>
+        </div>
+        <div class="mb-2 d-flex align-items-center">
+          <span class="me-2 text-warning">★☆☆☆☆</span>
+          <div class="progress flex-grow-1 me-2">
+            <div class="progress-bar bg-warning" style="width: 0%;"></div>
+          </div>
+          <span>0</span>
+        </div>
+        <p class="text-muted mt-3">No hay valoraciones aún.</p>
+      </div>
+
+      <div class="col-md-6">
+        <p><strong>Sé el primero en valorar este producto</strong></p>
+        <form>
+          <div class="mb-2">
+            <label class="form-label">Tu puntuación *</label>
+            <div class="text-warning fs-4">☆ ☆ ☆ ☆ ☆</div>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Tu valoración *</label>
+            <textarea class="form-control" rows="4" required></textarea>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-2">
+              <label class="form-label">Pros</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="col-md-6 mb-2">
+              <label class="form-label">Desventajas</label>
+              <input type="text" class="form-control">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-2">
+              <label class="form-label">Nombre *</label>
+              <input type="text" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-2">
+              <label class="form-label">Correo electrónico *</label>
+              <input type="email" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input">
+            <label class="form-check-label">Guardar mi nombre, correo y web</label>
+          </div>
+          <button type="submit" class="btn btn-danger">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <h2 class="section-title">Preguntas Frecuentes</h2>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+            ¿Incluye garantía?
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Sí, todas nuestras laptops incluyen garantía de 1 año por defectos de fábrica.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+            ¿Se puede financiar?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Sí, contamos con opciones de financiamiento en cuotas sin interés con bancos participantes.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Productos Relacionados</h2>
+    <div class="scroll-container">
+      <div class="product-card">
+        <img src="images_busqueda/laptop4.webp" class="img-fluid">
+        <p>HP Elitebook G4</p>
+        <small class="text-muted">₡195,000</small>
+      </div>
+      <div class="product-card">
+        <img src="images_busqueda/laptop5.webp" class="img-fluid">
+        <p>DELL Latitude</p>
+        <small class="text-muted">₡199,000</small>
+      </div>
+      <div class="product-card">
+        <img src="images_busqueda/laptop6.webp" class="img-fluid">
+        <p>Lenovo IdeaPad</p>
+        <small class="text-muted">₡210,000</small>
+      </div>
+      <div class="product-card">
+        <img src="images_busqueda/laptop7.webp" class="img-fluid">
+        <p>Acer Aspire 5</p>
+        <small class="text-muted">₡185,000</small>
+      </div>
+      <div class="product-card">
+        <img src="images_busqueda/laptop8.webp" class="img-fluid">
+        <p>ASUS VivoBook</p>
+        <small class="text-muted">₡225,000</small>
+      </div>
+       <div class="product-card">
+        <img src="images_busqueda/laptop9.webp" class="img-fluid">
+        <p>ASUS VivoBook</p>
+        <small class="text-muted">₡225,000</small>
+      </div>
+       <div class="product-card">
+        <img src="images_busqueda/laptop4.webp" class="img-fluid">
+        <p>ASUS VivoBook</p>
+        <small class="text-muted">₡225,000</small>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Pie de Pagina Profesional –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="bg-white border-top pt-4">
+    <div class="container text-center">
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-3">
+          <img src="images_inicio/logo.png" alt="Logo DigitalCore" style="max-height: 70px;">
+          <p class="small mt-2">
+            ¡Somos tu tienda de confianza! Calidad, respaldo y atención personalizada desde el primer clic.
+          </p>
+        </div>
+        <div class="col-md-3 d-flex align-items-center justify-content-center">
+          <img src="images_inicio/mac.png" alt="Apple Reseller" style="max-height: 50px;">
+        </div>
+        <div class="col-md-3 d-flex align-items-center justify-content-center">
+          <img src="images_inicio/dji.png" alt="DJI" style="max-height: 40px;">
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <a href="#" class="me-3"><img src="images_inicio/face.png" alt="Facebook" width="32"></a>
+        <a href="#" class="me-3"><img src="images_inicio/twiter.png" alt="X" width="32"></a>
+        <a href="#" class="me-3"><img src="images_inicio/insta.png" alt="Instagram" width="32"></a>
+        <a href="#" class="me-3"><img src="images_inicio/youtube.png" alt="YouTube" width="32"></a>
+        <a href="#" class="me-3"><img src="images_inicio/linkedin.png" alt="LinkedIn" width="32"></a>
+        <a href="#" class="me-3"><img src="images_inicio/wa.png" alt="WhatsApp" width="32"></a>
+        <a href="#"><img src="images_inicio/tiktok.png" alt="TikTok" width="32"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Boton WhatsApp Flotante –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <a href="https://wa.me/50660000000" class="whatsapp-float" target="_blank">
+    <img src="images_inicio/nume.png" style="width: 60px;">
+  </a>
+
+  <!-- Derechos & Pagos –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+      <div class="mt-4 border-top pt-3">
+        <p class="small mb-3 text-center">© DigitalCore Costa Rica - 2025. Todos los Derechos Reservados.</p>
+        <div class="d-flex justify-content-center align-items-center gap-3">
+          <img src="images_inicio/visa.png" alt="Visa" width="60">
+          <img src="images_inicio/mastercard.png" alt="MasterCard" width="60">
+          <img src="images_inicio/pay.png" alt="PlacetoPay" width="120">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  </html>

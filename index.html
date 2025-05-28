@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<!-- Idioma –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<html lang="es">
+
+<!-- Cabecera –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DigitalCore | Inicio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="images_inicio/logo.png" type="image/png">
+   <link rel="stylesheet" href="styles/inicio.css">
+</head>
+<body>
+
+<!-- Barra Superior –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="top-bar">
+  <img src="images_inicio/logo.png" alt="Logo" class="logo">
+  <div class="search-bar">
+    <form action="busqueda.html" method="get">
+      <button type="submit"><i class="bi bi-search"></i></button>
+      <input type="text" name="q" placeholder=" Buscar productos...">
+    </form>
+  </div>
+  <div>
+    <a href="CategoriaOfertas.html"><img src="images_busqueda/ofertas.png" alt="Ofertas" height="50"></a>
+  </div>
+</div>
+
+<!-- Barra Inferior –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="bottom-bar">
+  <div class="menu-icon" onclick="toggleSidebar()">☰</div>
+  <div><strong>Todas las Categorías</strong></div>
+  <a href="index.html">Inicio</a>
+  <a href="SobreNosotros.html">Sobre Nosotros</a>
+  <a href="CategoriaLaptop.html">Laptop</a>
+  <a href="CategoriaGaming.html">Gaming</a>
+  <a href="CategoriaOfertas.html">Ofertas</a>
+  <a href="TerminosCondiciones.html">Términos y Condiciones</a>
+  <a>❤️</a>
+  <a href="Carrito.html">🛒</a>
+</div>
+
+<!-- Barra Lateral –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="sidebar bg-white" id="sidebar">
+  <ul>
+    <li onclick="toggleSubmenu(event, this)"><i class="bi bi-phone"></i> Celulares<span>+</span>
+      <ul>
+        <li onclick="toggleSubmenu(event, this)">Smartphones<span>+</span>
+          <ul>
+            <li>Android</li>
+            <li>iPhone</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li onclick="toggleSubmenu(event, this)"><i class="bi bi-smartwatch bg-white"></i> Wearables<span>+</span>
+      <ul>
+        <li>Smartwatches</li>
+        <li>Brazaletes</li>
+      </ul>
+    </li>
+    <li><a href="CategoriaLaptop.html"><i class="bi bi-tv"></i> Laptop</a></li>
+    <li><a href="CategoriaGaming.html"><i class="bi bi-controller"></i> Video Juegos</a></li>
+    <li><a href="CategoriaOfertas.html"><i class="bi bi-lightning-charge"></i> Ofertas</a></li>
+  </ul>
+</div>
+
+<!-- Funcionamiento Barra Lateral –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+    sidebar.classList.toggle('active');
+    mainContent.classList.toggle('shifted');
+  }
+
+  function toggleSubmenu(event, item) {
+    event.stopPropagation();
+    item.classList.toggle('active');
+    const span = item.querySelector(':scope > span');
+    if (span) {
+      span.textContent = item.classList.contains('active') ? '-' : '+';
+    }
+  }
+
+  document.addEventListener('click', function(event) {
+    const sidebar = document.getElementById('sidebar');
+    const menuIcon = document.querySelector('.menu-icon');
+    if (!sidebar.contains(event.target) && !menuIcon.contains(event.target)) {
+      sidebar.classList.remove('active');
+      document.getElementById('mainContent').classList.remove('shifted');
+    }
+  });
+</script>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+    sidebar.classList.toggle('active');
+    mainContent.classList.toggle('shifted');
+  }
+</script>
+
+<!-- Carrusel –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images_inicio/car4.png" class="d-block w-100" alt="Oferta 1">
+      </div>
+      <div class="carousel-item">
+        <img src="images_inicio/car2.png" class="d-block w-100" alt="Oferta 2">
+      </div>
+      <div class="carousel-item">
+        <img src="images_inicio/car3.png" class="d-block w-100" alt="Oferta 3">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <div class="container py-5">
+  <div class="row g-4 justify-content-center">
+
+<!-- Cards –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="col-md-4">
+      <div class="categoria-card" style="background-image: url('images_inicio/lps.png');">
+        <div class="categoria-overlay"></div>
+        <div class="categoria-content">
+          <h5 class="fw-bold">Laptops</h5>
+          <p>Gran variedad de marcas!</p>
+          <a href="CategoriaLaptop.html" class="btn btn-primary">Ver Más</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="categoria-card" style="background-image: url('images_inicio/ofer.jpeg');">
+        <div class="categoria-overlay"></div>
+        <div class="categoria-content">
+          <h5 class="fw-bold">Ofertas</h5>
+          <p>Para todo propósito!</p>
+          <a href="CategoriaOfertas.html" class="btn btn-primary">Ver Más</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="categoria-card" style="background-image: url('images_inicio/gaming.jpeg');">
+        <div class="categoria-overlay"></div>
+        <div class="categoria-content">
+          <h5 class="fw-bold">Gaming</h5>
+          <p>Gran variedad!</p>
+          <a href="CategoriaGaming.html" class="btn btn-primary">Ver Más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Seccion: Novedades –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container my-5">
+  <h2 class="section-title">🆕 Novedades</h2><br>
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="col">
+      <div class="card">
+        <img src="images_inicio/tablet.webp" class="card-img-top" alt="Producto nuevo">
+
+        <div class="card-body">
+          <h5 class="card-title">Tablet Android 11</h5>
+          <p class="card-text">Pantalla 10.1", 128GB.</p>
+          <a href="ContenidoTablet.html" class="btn btn-primary w-100">Ver más</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="images_inicio/mini.webp" class="card-img-top" alt="Producto nuevo">
+        <div class="card-body">
+          <h5 class="card-title">Mini PC Intel 12va</h5>
+          <p class="card-text">Compacto para oficina.</p>
+          <a class="btn btn-secondary w-100">Ver más</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="images_inicio/miniTeclado.webp" class="card-img-top" alt="Producto nuevo">
+        <div class="card-body">
+          <h5 class="card-title">Teclado Gamer RGB</h5>
+          <p class="card-text">60% layout, switches rojos.</p>
+          <a class="btn btn-secondary w-100">Ver más</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="images_inicio/bank.webp" class="card-img-top" alt="Producto nuevo">
+        <div class="card-body">
+          <h5 class="card-title">Power Bank 20,000mAh</h5>
+          <p class="card-text">Dos puertos USB.</p>
+          <a class="btn btn-secondary w-100">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Seccion: Computadoras Portatiles –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container my-5">
+  <h2 class="section-title">💻 Portátiles</h2><br>
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="col">
+      <div class="card">
+        <img src="images_inicio/asus.jpg" class="card-img-top" alt="Laptop">
+        <div class="card-body">
+          <h5 class="card-title">ASUS VIVOBOOK</h5>
+          <p class="card-text">15 - l5 1235U -8 GB - SSD</p>
+          <a href="ContenidoLaptop.html" class="btn btn-primary w-100">Ver más</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="images_inicio/acer.jpg" class="card-img-top" alt="Laptop">
+        <div class="card-body">
+          <h5 class="card-title">ACER ASPIRE 3</h5>
+          <p class="card-text">5 7520U - 16GB</p>
+          <a class="btn btn-secondary w-100">Ver más</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="images_inicio/dell.jpg" class="card-img-top" alt="Laptop">
+        <div class="card-body">
+          <h5 class="card-title">DELL INSPIRON</h5>
+          <p class="card-text">15 3535 - Ryzen 5 7520u - 8 GB</p>
+          <a class="btn btn-secondary w-100">Ver más</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="images_inicio/msi.jpg" class="card-img-top" alt="Laptop">
+        <div class="card-body">
+          <h5 class="card-title">MSI Cyborg 15</h5>
+          <p class="card-text">A1VFK - Intel Core Ultra 7 155H</p>
+          <a class="btn btn-secondary w-100">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Seccion: Ofertas –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container my-5">
+  <h2 class="section-title">🔥 Ofertas </h2><br>
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="col">
+ <div class="card">
+        <img src="images_inicio/rgb.webp" class="card-img-top" alt="Case">
+        <div class="card-body">
+          <h5 class="card-title">Case RGB ATX</h5>
+          <p class="card-text">Vidrio templado y ventiladores</p>
+          <a class="btn btn-secondary w-100">Ver más</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="images_inicio/ryzen.webp" class="card-img-top" alt="CPU">
+        <div class="card-body">
+          <h5 class="card-title">Ryzen 5 5600X</h5>
+          <p class="card-text">6 núcleos, 12 hilos</p>
+          <a class="btn btn-secondary w-100">Ver más</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="images_inicio/monitor.webp" class="card-img-top" alt="Monitor">
+        <div class="card-body">
+          <h5 class="card-title">Monitor Gaming 144Hz</h5>
+          <p class="card-text">Resolución FHD, panel IPS</p>
+          <a class="btn btn-secondary w-100">Ver más</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+       <div class="card">
+        <img src="images_inicio/rtx.webp" class="card-img-top" alt="GPU">
+        <div class="card-body">
+          <h5 class="card-title">RTX 4070 Ti</h5>
+          <p class="card-text">¡Precio especial!</p>
+          <a class="btn btn-secondary w-100">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Seccion: Accesorios –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container my-5">
+  <div class="custom-card d-flex flex-column flex-lg-row align-items-center justify-content-between">
+    <div class="col-lg-5 text-center mb-4 mb-lg-0">
+      <img src="images_inicio/accesorio.jpg" alt="Computadoras y Accesorios" class="custom-img">
+    </div>
+    <div class="col-lg-6">
+      <h2 class="fw-bold">Accesorios</h2>
+      <p class="text-muted">
+        Personaliza tu computadora con accesorios, disponibles en una
+        variedad de colores para todos los gustos.
+      </p>
+      <div class="categoria-tags d-flex flex-wrap">
+        <button class="btn btn-outline-dark btn-sm"><i class="bi bi-display"></i> Monitores</button>
+        <button class="btn btn-outline-dark btn-sm"><i class="bi bi-keyboard"></i> Teclados</button>
+        <button class="btn btn-outline-dark btn-sm"><i class="bi bi-headphones"></i> Auriculares</button>
+        <button class="btn btn-outline-dark btn-sm"><i class="bi bi-pc"></i> Computadoras</button>
+        <button class="btn btn-outline-dark btn-sm"><i class="bi bi-mouse"></i> Mouse</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Seccion: Accesorios –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container my-5">
+  <h2 class="section-title">🎧 Accesorios</h2><br>
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="col">
+        <div class="card">
+        <img src="images_inicio/teclado.webp" class="card-img-top" alt="Teclado">
+        <div class="card-body">
+          <h5 class="card-title">Teclado Mecánico</h5>
+          <p class="card-text">Retroiluminación RGB</p>
+          <a class="btn btn-secondary w-100">Ver más</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="images_inicio/mouse.webp" class="card-img-top" alt="Mouse">
+        <div class="card-body">
+          <h5 class="card-title">Mouse Inalámbrico</h5>
+          <p class="card-text">RGB, hasta 16,000 DPI</p>
+          <a class="btn btn-secondary w-100">Ver más</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+     <div class="card">
+        <img src="images_inicio/ssd.webp" class="card-img-top" alt="SSD">
+        <div class="card-body">
+          <h5 class="card-title">SSD NVMe 1TB</h5>
+          <p class="card-text">Velocidad extrema PCIe Gen4</p>
+          <a class="btn btn-secondary w-100">Ver más</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="images_inicio/audifono.webp" class="card-img-top" alt="Audífonos">
+        <div class="card-body">
+          <h5 class="card-title">Audífonos Bluetooth</h5>
+          <p class="card-text">Cancelación de ruido</p>
+          <a class="btn btn-secondary w-100">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Seccion: ¿Listo para armar tu PC? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="info-section py-5 text-center">
+    <div class="container">
+      <h3 class="fw-bold">¿Listo para armar tu PC?</h3>
+      <p class="lead">Encuentra todos los componentes que necesitas al mejor precio.</p>
+      <a class="btn btn-success btn-lg mt-2">Explorar Categorías</a>
+    </div>
+  </div>
+
+<!-- Pie de Pagina Profesional –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="bg-white border-top pt-4">
+  <div class="container text-center">
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-3">
+        <img src="images_inicio/logo.png" alt="Logo DigitalCore" style="max-height: 70px;">
+        <p class="small mt-2">
+          ¡Somos tu tienda de confianza! Calidad, respaldo y atención personalizada desde el primer clic.
+        </p>
+      </div>
+      <div class="col-md-3 d-flex align-items-center justify-content-center">
+        <img src="images_inicio/mac.png" alt="Apple Reseller" style="max-height: 50px;">
+      </div>
+      <div class="col-md-3 d-flex align-items-center justify-content-center">
+        <img src="images_inicio/dji.png" alt="DJI" style="max-height: 40px;">
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <a class="me-3"><img src="images_inicio/face.png" alt="Facebook" width="32"></a>
+      <a class="me-3"><img src="images_inicio/twiter.png" alt="X" width="32"></a>
+      <a class="me-3"><img src="images_inicio/insta.png" alt="Instagram" width="32"></a>
+      <a class="me-3"><img src="images_inicio/youtube.png" alt="YouTube" width="32"></a>
+      <a class="me-3"><img src="images_inicio/linkedin.png" alt="LinkedIn" width="32"></a>
+      <a class="me-3"><img src="images_inicio/wa.png" alt="WhatsApp" width="32"></a>
+      <a class="me-3"><img src="images_inicio/tiktok.png" alt="TikTok" width="32"></a>
+    </div>
+  </div>
+</div>
+
+<!-- Boton WhatsApp Flotante –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<a href="https://wa.me/50660000000" class="whatsapp-float" target="_blank">
+  <img src="images_inicio/nume.png" style="width: 60px;">
+</a>
+
+    <!-- Derechos y pagos -->
+    <div class="mt-4 border-top pt-3">
+      <p class="small mb-3 text-center">© DigitalCore Costa Rica - 2025. Todos los Derechos Reservados.</p>
+      <div class="d-flex justify-content-center align-items-center gap-3">
+        <img src="images_inicio/visa.png" alt="Visa" width="60">
+        <img src="images_inicio/mastercard.png" alt="MasterCard" width="60">
+        <img src="images_inicio/pay.png" alt="PlacetoPay" width="120">
+      </div>
+    </div>
+  </div>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<!-- Idioma –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<html lang="es">
+
+<!-- Cabecera –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DigitalCore | Carrito de Compras</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="images_inicio/logo.png" type="image/png">
+  <link rel="stylesheet" href="styles/carrito.css">
+  <link rel="stylesheet" href="styles/inicio.css">
+</head>
+
+<!-- Barra Superior –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="top-bar">
+  <a href="index.html"><img src="images_inicio/logo.png" alt="Logo" class="logo"></a>
+  <div class="search-bar">
+    <form action="busqueda.html" method="get">
+      <button type="submit"><i class="bi bi-search"></i></button>
+      <input type="text" name="q" placeholder=" Buscar productos...">
+    </form>
+  </div>
+  <div>
+    <a href="CategoriaOfertas.html"><img src="images_busqueda/ofertas.png" alt="Ofertas" height="50"></a>
+  </div>
+</div>
+
+<!-- Barra Inferior –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="bottom-bar">
+  <div class="menu-icon" onclick="toggleSidebar()">☰</div>
+  <div><strong>Todas las Categorías</strong></div>
+  <a href="index.html">Inicio</a>
+  <a href="SobreNosotros.html">Sobre Nosotros</a>
+  <a href="CategoriaLaptop.html">Laptop</a>
+  <a href="CategoriaGaming.html">Gaming</a>
+  <a href="CategoriaOfertas.html">Ofertas</a>
+  <a href="TerminosCondiciones.html">Términos y Condiciones</a>
+  <a>❤️</a>
+  <a href="Carrito.html">🛒</a>
+</div>
+
+<!-- Barra Lateral –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="sidebar bg-white" id="sidebar">
+  <ul>
+    <li onclick="toggleSubmenu(event, this)"><i class="bi bi-phone"></i> Celulares<span>+</span>
+      <ul>
+        <li onclick="toggleSubmenu(event, this)">Smartphones<span>+</span>
+          <ul>
+            <li>Android</li>
+            <li>iPhone</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li onclick="toggleSubmenu(event, this)"><i class="bi bi-smartwatch bg-white"></i> Wearables<span>+</span>
+      <ul>
+        <li>Smartwatches</li>
+        <li>Brazaletes</li>
+      </ul>
+    </li>
+    <li><a href="CategoriaLaptop.html"><i class="bi bi-tv"></i> Laptop</a></li>
+    <li><a href="CategoriaGaming.html"><i class="bi bi-controller"></i> Video Juegos</a></li>
+    <li><a href="CategoriaOfertas.html"><i class="bi bi-lightning-charge"></i> Ofertas</a></li>
+  </ul>
+</div>
+
+<!-- Funcionamiento Barra Lateral –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+    sidebar.classList.toggle('active');
+    mainContent.classList.toggle('shifted');
+  }
+
+  function toggleSubmenu(event, item) {
+    event.stopPropagation();
+    item.classList.toggle('active');
+    const span = item.querySelector(':scope > span');
+    if (span) {
+      span.textContent = item.classList.contains('active') ? '-' : '+';
+    }
+  }
+
+  document.addEventListener('click', function(event) {
+    const sidebar = document.getElementById('sidebar');
+    const menuIcon = document.querySelector('.menu-icon');
+    if (!sidebar.contains(event.target) && !menuIcon.contains(event.target)) {
+      sidebar.classList.remove('active');
+      document.getElementById('mainContent').classList.remove('shifted');
+    }
+  });
+</script>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+    sidebar.classList.toggle('active');
+    mainContent.classList.toggle('shifted');
+  }
+</script>
+
+<!-- Contenido –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container my-4">
+  <div class="etapa-compra text-center">
+    <strong>CARRITO</strong> <span>→</span> FINALIZAR COMPRA <span>→</span> PEDIDO COMPLETADO
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-lg-8">
+      <div class="bg-white rounded p-3 shadow-sm">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>PRODUCTO</th>
+              <th>PRECIO</th>
+              <th>CANTIDAD</th>
+              <th>SUBTOTAL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img src="images_inicio/tablet.webp" width="80" class="me-3">
+                  <div>
+                    <strong>TABLET SAMSUNG GALAXY TAB A9 4GB – 64GB – WIFI – 8.7″</strong><br>
+                    SKU: E970SWN <br>
+                  </div>
+                </div>
+              </td>
+              <td>₡85,000</td>
+              <td>
+                <div class="input-group input-group-sm">
+                  <button class="btn btn-outline-secondary" onclick="cambiarCantidad(-1, 1, 85000)">-</button>
+                  <input type="text" id="cantidad1" class="form-control text-center" value="1" readonly>
+                  <button class="btn btn-outline-secondary" onclick="cambiarCantidad(1, 1, 85000)">+</button>
+                </div>
+              </td>
+              <td class="text-danger" id="subtotal1">₡85,000</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img src="images_inicio/asus.jpg" width="80" class="me-3">
+                  <div>
+                    <strong>LAPTOP ASUS VIVOBOOK K3605VU CI9-13900H – 16GB – 1TB SSD – RTX-4050 – 16” – W11</strong><br>
+                    SKU: E970SWN <br>
+                  </div>
+                </div>
+              </td>
+              <td>₡685,000</td>
+              <td>
+                <div class="input-group input-group-sm">
+                  <button class="btn btn-outline-secondary" onclick="cambiarCantidad(-1, 2, 685000)">-</button>
+                  <input type="text" id="cantidad2" class="form-control text-center" value="1" readonly>
+                  <button class="btn btn-outline-secondary" onclick="cambiarCantidad(1, 2, 685000)">+</button>
+                </div>
+              </td>
+              <td class="text-danger" id="subtotal2">₡685,000</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="d-flex justify-content-end mt-3">
+          <input type="text" class="form-control w-25 me-2" placeholder="Código de cupón">
+          <button class="btn btn-danger">Aplicar Cupón</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="resumen-compra">
+        <h5>Total de compra</h5>
+        <div class="d-flex justify-content-between">
+          <span>Subtotal</span>
+          <span id="resumenSubtotal">₡770,000</span>
+        </div>
+        <hr>
+        <div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="envio">
+            <label class="form-check-label">Entrega GAM (3 a 5 Días): ₡2,900</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="envio">
+            <label class="form-check-label">Entrega Rural (3 a 5 Días): ₡7,900</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="envio" checked>
+            <label class="form-check-label text-danger">Encomienda fuera GAM: ₡2,900</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="envio">
+            <label class="form-check-label">Encomienda fuera GAM (pantallas, etc): ₡4,900</label>
+          </div>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between">
+          <strong>Total</strong>
+          <strong class="precio-final" id="precioTotal">₡770,000</strong>
+        </div>
+        <div class="text-end">
+          <small class="text-muted">Incluye ₡3,279 Impuesto IVA</small>
+        </div>
+        <a href="Facturacion.html" class="btn btn-danger w-100 mt-3">Finalizar Compra</a>
+      </div>
+    </div>
+
+<!-- Acordeon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="mt-5">
+  <div class="accordion" id="faqAccordion">
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq1">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+          FAQ PLACETOPAY
+        </button>
+      </h2>
+      <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          <ul>
+            <li><b>¿Qué es Placetopay?</b><br>Placetopay es la plataforma de pagos electrónicos que usa DigitalCore para procesar en línea las transacciones generadas en la tienda virtual con las formas de pago habilitadas para tal fin.</li>
+            <li><b>¿Cómo puedo pagar?</b><br>En la tienda virtual de DigitalCore usted podrá realizar su pago con los medios habilitados para tal fin.</li>
+            <li><b>¿Es seguro?</b><br>Para proteger sus datos DigitalCore delega en Placetopay la captura de la información confidencial.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq2">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+          ¿En cuánto tiempo recibiré mi orden?
+        </button>
+      </h2>
+      <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          <p class="text-danger fw-bold">Comprá con confianza</p>
+          <p>Toda la información se encuentra debidamente encriptada y es transmitida de manera segura, eliminando así cualquier riesgo potencial. Para lograr esto, se utiliza un protocolo de seguridad conocido como SSL (Secure Sockets Layer), el cual garantiza que los datos que se intercambian entre el usuario y el servidor permanezcan protegidos contra accesos no autorizados. Este protocolo crea un canal seguro que resguarda la confidencialidad e integridad de la información, asegurando que solo las partes autorizadas puedan acceder a los datos sensibles.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq3">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+          ¿Qué hago si un producto no está disponible?
+        </button>
+      </h2>
+      <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Puedes contactarnos para verificar disponibilidad en otras sucursales o recibir una notificación cuando esté disponible.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq4">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+          ¿Cuándo quedará confirmada mi orden?
+        </button>
+      </h2>
+      <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Su orden se confirmará una vez completado el pago y recibido el comprobante de la transacción.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- Script para Cantidad & Subtotal –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script>
+  function cambiarCantidad(valor, id, precioUnitario) {
+    const cantidadInput = document.getElementById(`cantidad${id}`);
+    let cantidad = parseInt(cantidadInput.value);
+    cantidad += valor;
+    if (cantidad < 1) cantidad = 1;
+    cantidadInput.value = cantidad;
+
+    const subtotal = cantidad * precioUnitario;
+    document.getElementById(`subtotal${id}`).textContent = `₡${subtotal.toLocaleString()}`;
+
+    const cantidad1 = parseInt(document.getElementById('cantidad1').value);
+    const cantidad2 = parseInt(document.getElementById('cantidad2').value);
+    const total = cantidad1 * 85000 + cantidad2 * 685000;
+    document.getElementById('resumenSubtotal').textContent = `₡${total.toLocaleString()}`;
+    document.getElementById('precioTotal').textContent = `₡${total.toLocaleString()}`;
+  }
+</script>
+
+<!-- Pie de Pagina Profesional –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="bg-white border-top pt-4">
+  <div class="container text-center">
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-3">
+        <img src="images_inicio/logo.png" alt="Logo DigitalCore" style="max-height: 70px;">
+        <p class="small mt-2">
+          ¡Somos tu tienda de confianza! Calidad, respaldo y atención personalizada desde el primer clic.
+        </p>
+      </div>
+      <div class="col-md-3 d-flex align-items-center justify-content-center">
+        <img src="images_inicio/mac.png" alt="Apple Reseller" style="max-height: 50px;">
+      </div>
+      <div class="col-md-3 d-flex align-items-center justify-content-center">
+        <img src="images_inicio/dji.png" alt="DJI" style="max-height: 40px;">
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <a href="#" class="me-3"><img src="images_inicio/face.png" alt="Facebook" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/twiter.png" alt="X" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/insta.png" alt="Instagram" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/youtube.png" alt="YouTube" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/linkedin.png" alt="LinkedIn" width="32"></a>
+      <a href="#" class="me-3"><img src="images_inicio/wa.png" alt="WhatsApp" width="32"></a>
+      <a href="#"><img src="images_inicio/tiktok.png" alt="TikTok" width="32"></a>
+    </div>
+  </div>
+</div>
+
+<!-- Boton WhatsApp Flotante –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<a href="https://wa.me/50660000000" class="whatsapp-float" target="_blank">
+  <img src="images_inicio/nume.png" style="width: 60px;">
+</a>
+
+<!-- Derechos y Pagos –––––––––––––––––––––––––––––––––––––––––––––––-------––– -->
+    <div class="mt-4 border-top pt-3">
+      <p class="small mb-3 text-center">© DigitalCore Costa Rica - 2025. Todos los Derechos Reservados.</p>
+      <div class="d-flex justify-content-center align-items-center gap-3">
+        <img src="images_inicio/visa.png" alt="Visa" width="60">
+        <img src="images_inicio/mastercard.png" alt="MasterCard" width="60">
+        <img src="images_inicio/pay.png" alt="PlacetoPay" width="120">
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
