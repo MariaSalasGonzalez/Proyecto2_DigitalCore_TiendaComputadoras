@@ -1,0 +1,29 @@
+ .terminos {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 20px;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .terminos h2 {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .terminos img {
+      display: block;
+      margin: 20px auto;
+      max-width: 180px;
+    }
+
+    .terminos h6 {
+      font-weight: bold;
+      margin-top: 30px;
+    }
+
+    .terminos p {
+      text-align: justify;
+      margin-bottom: 10px;
+    }

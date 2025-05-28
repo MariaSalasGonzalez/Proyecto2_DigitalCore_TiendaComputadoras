@@ -1,0 +1,249 @@
+    .card {
+      border: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .info-section {
+      background-color: #e2f0e9;
+    }
+
+    footer {
+      background-color: #0d1b2a;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    .btn-primary {
+      background-color: #0d6efd;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #0b5ed7;
+    }
+
+     .whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 999;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #f9f9f9;
+    }
+    .top-bar {
+      background: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+    }
+    .top-bar img.logo {
+      height: 50px;
+    }
+    .top-bar .contact-info {
+      text-align: right;
+      font-size: 0.9rem;
+    }
+    .bottom-bar {
+      background: #efefef;
+      padding: 8px 20px;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 0.9rem;
+    }
+    .bottom-bar a {
+      text-decoration: none;
+      color: black;
+    }
+    .bottom-bar .menu-icon {
+      background-color: grey;
+      color: white;
+      border-radius: 50%;
+      padding: 8px;
+      cursor: pointer;
+    }
+    .sidebar {
+      width: 280px;
+      background-color: #fff;
+      border-right: 1px solid #ddd;
+      height: 100vh;
+      position: fixed;
+      top: 120px;
+      left: -300px;
+      padding: 1rem;
+      overflow-y: auto;
+      z-index: 1000;
+      transition: left 0.3s ease;
+    }
+    .sidebar.active {
+      left: 0;
+    }
+    .sidebar h5 {
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
+    .sidebar ul li {
+      padding: 8px 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .sidebar ul li:hover {
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+    .main-content {
+      margin-left: 0;
+      transition: margin-left 0.3s ease;
+      padding: 1rem;
+    }
+    .main-content.shifted {
+      margin-left: 300px;
+    }
+
+    .sidebar ul ul {
+      display: none;
+      padding-left: 20px;
+    }
+    .sidebar li.active > ul {
+      display: block;
+    }
+    .sidebar li span {
+      float: right;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    .sidebar li {
+      cursor: pointer;
+    }
+    .sidebar ul ul li {
+      cursor: pointer;
+    }
+    .sidebar ul ul ul {
+      padding-left: 15px;
+      list-style-type: circle;
+    }
+
+     .categoria-card {
+      position: relative;
+      color: white;
+      border-radius: 15px;
+      overflow: hidden;
+      text-align: center;
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .categoria-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4); /* oscurecer imagen */
+      z-index: 1;
+    }
+
+    .categoria-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .categoria-btn {
+      background-color: white;
+      color: black;
+      border: none;
+    }
+
+    .categoria-btn:hover {
+      background-color: #f0f0f0;
+    }
+
+    .categoria-tags .btn {
+      margin: 5px 5px 0 0;
+      font-size: 0.9rem;
+    }
+    .custom-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+    .custom-img {
+      max-width: 100%;
+      height: auto;
+    }
+  .search-bar {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+  }
+  .search-bar form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    overflow: hidden;
+  }
+  .search-bar input {
+    flex: 1;
+    border: none;
+    padding: 8px 15px;
+    outline: none;
+    font-size: 0.9rem;
+  }
+  .search-bar button {
+    background: none;
+    border: none;
+    padding: 0 10px;
+    color: #007bff;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+  }
+
+
+  li a {
+    text-decoration: none;  /* Quita el subrayado */
+    color: inherit;         /* Mantiene el color del texto heredado (por ejemplo, negro) */
+    display: flex;          /* Alinea el ícono con el texto */
+    align-items: center;
+    gap: 8px;               /* Espacio entre ícono y texto */
+    padding: 6px 10px;      /* Espaciado interno opcional */
+    border-radius: 6px;     /* Bordes redondeados si querés */
+  }
+
+  li a:hover {
+    background-color: #f1f1f1; /* Color de fondo al pasar el mouse (opcional) */
+    color: #000;               /* Color al pasar el mouse (opcional) */
+  }

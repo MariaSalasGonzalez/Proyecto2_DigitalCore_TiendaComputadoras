@@ -1,0 +1,122 @@
+    .card-custom {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .precio-final {
+      color: #d80000;
+      font-size: 1.7rem;
+      font-weight: bold;
+    }
+
+    .form-pago img {
+      max-height: 30px;
+      margin: 0 10px;
+    }
+
+    .form-label {
+      font-weight: 600;
+    }
+
+    ul li {
+      margin-bottom: 4px;
+    }
+
+    .progress {
+      height: 10px;
+    }
+
+    .text-warning {
+      font-size: 1.1rem;
+    }
+    
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .checkout-steps-bar {
+      background-color: #dc3545;
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 1rem;
+      padding: 16px 30px;
+      border-radius: 10px;
+      margin: 20px auto 0 auto;
+      max-width: 1140px;
+      text-align: center;
+      letter-spacing: 1px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-top: 50px;
+      margin-bottom: 25px;
+      border-left: 5px solid #dc3545;
+      padding-left: 16px;
+      color: #343a40;
+    }
+    .content-card {
+      background: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .nav-tabs .nav-link.active {
+      background-color: #dc3545;
+      color: #fff;
+      border-radius: 8px 8px 0 0;
+    }
+    .nav-tabs .nav-link {
+      border: none;
+      color: #dc3545;
+      font-weight: 500;
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: darkred;
+      color: white;
+    }
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 10px 0 20px;
+      scrollbar-width: thin;
+    }
+    .scroll-container::-webkit-scrollbar {
+      height: 8px;
+    }
+    .scroll-container::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 4px;
+    }
+    .product-card {
+      flex: 0 0 auto;
+      width: 190px;
+      background: white;
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .product-card img {
+      height: 130px;
+      object-fit: contain;
+      margin-bottom: 12px;
+    }
+    .product-card p {
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #212529;
+    }

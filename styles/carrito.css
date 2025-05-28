@@ -1,0 +1,20 @@
+    .etapa-compra {
+      background-color: #dc3545;
+      color: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      font-weight: bold;
+    }
+    .etapa-compra span {
+      margin: 0 0.5rem;
+    }
+    .resumen-compra {
+      background: #fff;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .precio-final {
+      color: red;
+      font-weight: bold;
+    }
